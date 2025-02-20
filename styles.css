@@ -1,0 +1,248 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6), /* Negro con opacidad */
+        rgba(0, 0, 0, 0.6) 15px,
+        rgba(255, 255, 255) 15px,
+        rgba(255, 255, 255) 40px
+    );
+}
+html, body {
+    height: 100%; /* Asegúrate de que el cuerpo ocupe toda la altura de la ventana */
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+/* Estilos para los títulos */
+h1 {
+    font-size: 60px;
+    color: #c40606;
+    display: inline-block; /* Necesario para que transform funcione */
+    transform: scale(1, 3); /* Escala solo la altura */
+}
+h2 {
+    color: transparent;
+    background: linear-gradient(45deg, #ffffff, #ffcc00, #ff9900, #ff6600, #f88538, #ffffff);
+    background-size: 400% 400%; /* Aumentar el tamaño del fondo para animar el movimiento */
+    background-clip: text; /* Hacer que el fondo se aplique al texto */
+    animation: degradado 6s ease infinite; /* Animación suave*/
+}
+/* Animación con degradado del subtítulo principal */
+@keyframes degradado {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+h3 {
+    color: #c40606;
+    font-size: 28px;
+    text-align: center;
+    text-shadow: #333;
+}
+
+/* Estilos para la cabecera */
+header {
+    background-image: url("Recursos/cabecera.PNG");
+    background-size: cover; /* Cubrir todo el área del header */
+    background-position: center; /* Centra la imagen */
+    padding: 10px 20px;
+    text-align: center;
+}
+
+/* Estilos la zona principal */
+#contenedor {
+    display: flex; /* Usar flexbox para disposición horizontal */
+    justify-content: space-between; /* Espaciado entre bloques */
+    margin: 20px;
+}
+
+section {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    flex: 1; /* Permitir que cada sección crezca uniformemente */
+    margin: 0 10px; /* Espacio entre secciones */
+}
+
+img {
+    border-radius: 5px;
+}
+
+p {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Estilos para el menú lateral */
+#sidebar {
+    min-width: 150px;
+    max-width: 275px;
+    background-color: #fcf3d1;
+}
+.info {
+    padding-bottom: 15px;
+}
+li{
+    list-style-type: none ;
+    padding-bottom: 5px;
+}
+summary {
+    font-size: 22px;
+    transition: color 0.5s ease; /* Transición suave */
+}
+summary:hover {
+    transform: scale(1.05);
+    color: #f88538;
+}
+.temporadas {
+    margin-left: 15px;
+}
+
+/* Estilos para el contenido central */
+.contenido {
+    background-color: #fae5cd;
+    border-radius: 5px;
+    margin: 15px;
+    padding: 20px;
+    justify-content: space-between;
+    text-align: center;
+}
+.contenido img {
+    width: 60%;
+    padding-bottom: 5%;
+}
+.botonera {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.botonera p {
+    flex: 0 1 calc(50% - 10px); /* Dos columnas */
+}
+input[type="button"] {
+    background-color: #f88538;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+    transition: background-color 1s; /* Transición suave */
+}
+input[type="button"]:hover {
+    transform: scale(1.05);
+    background-color: #a03b1c;
+}
+.reparto input[type="button"] {
+    width: 180px;
+}
+dialog {
+    text-align: center;
+    width: 450px;;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 5px 10px black;
+}
+.parrafo {
+    line-height: 1.3; /* Espaciado entre líneas */
+    padding-left: 20px;
+    text-align: justify; /* Justificar el texto */
+    color: #333;
+}
+.contenido .parrafo {
+    width: 75%;
+    padding-left: 12%;
+}
+
+/* Estilos de los botones de "Curiosidades" */
+.galeria {
+    display: flex;
+}
+.cobaya, .cobaya2 {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Eliminar scrollbars */
+    transition: transform 0.3s ease;
+}
+.cobaya img {
+    width: 30%; /* Tamaño de imagen */
+    animation: mover 2s infinite alternate; /* Animación de movimiento */
+}
+.cobaya2 img {
+    width: 30%; /* Tamaño de imagen */
+    animation: mover2 2s infinite alternate; /* Animación de movimiento */
+}
+/* Animación de los botones de curiosidades */ 
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateY(12px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateY(-6px);
+    }
+}
+@keyframes mover2 {
+    0% {
+        transform: translateY(12px);
+    }
+    25% {
+        transform: translateX(10px);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.cobaya:hover {
+    transform: scale(1.2); /* Aumentar tamaño al pasar el ratón */
+}
+#dialog-5, #dialog-6, #dialog-7, #dialog-8, #dialog-9{
+    top: 175%; /* Centrado verticalmente */
+    left: 30%; /* Centrado horizontalmente */
+}
+
+/* Estilos para el footer */
+.firma {
+    height: 65px;
+    background-image: url("Recursos/footer3.jpg");
+    background-size: cover; /* Cubrir todo el área del footer */
+    background-position: center; /* Centrar la imagen */
+    padding-top: 30px;
+    font-size: 22px;
+    text-align: center;
+    color: #c40606;
+}
+.firma a {
+    text-decoration: none;     
+    color: white;
+    transition: color 0.6s ease; /* Transición suave */
+}
+.firma a:hover {
+    color: #f88538;
+}
