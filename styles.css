@@ -219,7 +219,7 @@ dialog {
     }
 }
 
-.cobaya:hover {
+.cobaya:hover, .cobaya2:hover {
     transform: scale(1.2); /* Aumentar tamaño al pasar el ratón */
 }
 #dialog-5, #dialog-6, #dialog-7, #dialog-8, #dialog-9{
